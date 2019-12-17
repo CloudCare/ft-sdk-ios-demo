@@ -1,0 +1,6 @@
+framework module Pods_FTSDKiOSDemo {
+  umbrella header "Pods-FTSDKiOSDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
