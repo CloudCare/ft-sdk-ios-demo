@@ -9,6 +9,8 @@
 ## 安装
 -  **通过源码集成**
    - 获取源码。
+   配置下载链接：将想获取的SDK版本的版本号替换下载链接中的VERSION。
+   下载链接：https://zhuyun-static-files-production.oss-cn-hangzhou.aliyuncs.com/ft-sdk-package/ios/FTMobileAgent/VERSION.zip
    - 将 SDK 源代码导入 App 项目，并选中 Copy items if needed;
    - 添加依赖库：项目设置 "Build Phase" -> "Link Binary With Libraries" 添加：libicucore、libsqlite3 和 libz。
 -  **通过 CocoaPods 集成**
@@ -31,7 +33,7 @@
     config.isDebug = YES;
     config.metricsUrl = 写入地址;
     [FTMobileAgent startWithConfigOptions:config];
-``` 
+  ``` 
 
 ### SDK 可配置参数
 | 字段 | 类型 |说明|是否必须|
@@ -80,8 +82,7 @@
 
 ## 常见问题
 **1.关于查询指标imei**
-
 - IMEI
-   英文名称是：International Mobile Equipment Identity，是国际移动设备身份码的缩写，国际移动装备辨识码，是由15位数字组成的”电子串号”，它与每台手机一一对应，而且该码是全世界唯一的。每一部手机在组装完成后都将被赋予一个全球唯一的一组号码，这个号码从生产到交付使用都将被制造生产的厂商所记录。手机用户可以在手机中查到自己手机的IMEI码。因为隐私问题，苹果用户在iOS5以后不能再获取IMEI的值了。所以iOS sdk中将此字段设为null。
+   因为隐私问题，苹果用户在 iOS5 以后禁用代码直接获取 IMEI 的值。所以 iOS sdk 中不支持获取 IMEI。
    
 
