@@ -9,8 +9,8 @@
 ## 安装
 -  **通过源码集成**
    - 获取源码。
-   配置下载链接：将想获取的SDK版本的版本号替换下载链接中的VERSION。
-   下载链接：https://zhuyun-static-files-production.oss-cn-hangzhou.aliyuncs.com/ft-sdk-package/ios/FTMobileAgent/VERSION.zip
+     配置下载链接：将想获取的SDK版本的版本号替换下载链接中的VERSION。
+     下载链接：https://zhuyun-static-files-production.oss-cn-hangzhou.aliyuncs.com/ft-sdk-package/ios/FTMobileAgent/VERSION.zip
    - 将 SDK 源代码导入 App 项目，并选中 Copy items if needed;
    - 添加依赖库：项目设置 "Build Phase" -> "Link Binary With Libraries" 添加：libicucore、libsqlite3 和 libz。
 -  **通过 CocoaPods 集成**
@@ -52,8 +52,8 @@
 ```objective-c
   /**
 追踪自定义事件。
- @param field      文件名称（必填）
- @param values     事件名称（必填）
+ @param field      指标（必填）
+ @param values     指标值（必填）
 */ 
  - (void)track:( NSString *)field  values:(NSDictionary *)values;
 ```
@@ -64,9 +64,9 @@
 /**
  追踪自定义事件。
  
- @param field      文件名称（必填）
- @param tags       事件属性（选填）
- @param values     事件名称（必填）
+ @param field      指标（必填）
+ @param tags       标签（选填）
+ @param values     指标值（必填）
  */
  - (void)track:( NSString *)field tags:(nullable NSDictionary*)tags values:( NSDictionary *)values;
 ```
