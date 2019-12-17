@@ -14,8 +14,8 @@
    - 将 SDK 源代码导入 App 项目，并选中 Copy items if needed;
    - 添加依赖库：项目设置 "Build Phase" -> "Link Binary With Libraries" 添加：libicucore、libsqlite3 和 libz。
 -  **通过 CocoaPods 集成**
-  - 配置 Podfile 文件，在 Podfile 文件中添加 `pod 'FTMobileAgent'`
-  - 在 Podfile 目录下执行 pod install 安装 SDK。
+   - 配置 Podfile 文件，在 Podfile 文件中添加 `pod 'FTMobileAgent'`
+   - 在 Podfile 目录下执行 pod install 安装 SDK。
  
 ## 配置
 - 添加头文件
