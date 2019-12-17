@@ -1,5 +1,11 @@
 # FT Mobile SDK iOS
 
+**FTMobileAgent**
+
+![Cocoapods platforms](https://img.shields.io/cocoapods/p/FTMobileAgent)
+![Cocoapods](https://img.shields.io/cocoapods/v/FTMobileAgent)
+![Cocoapods](https://img.shields.io/cocoapods/l/FTAutoTrack)
+
 ## 安装
 -  **通过源码集成**
    - 获取源码。
