@@ -9,23 +9,47 @@
 /* Begin PBXAggregateTarget section */
 		216B8D37F3BB74C2B7CDD38883C05B38 /* FTMobileAgent */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 1E87208AB0E288365EC6F96DF234A3AA /* Build configuration list for PBXAggregateTarget "FTMobileAgent" */;
+			buildConfigurationList = 0FE0D4255098BF0007844D0433AA3956 /* Build configuration list for PBXAggregateTarget "FTMobileAgent" */;
 			buildPhases = (
 			);
 			dependencies = (
 			);
 			name = FTMobileAgent;
 		};
+		7042D65370C15883195B23E076FC3F12 /* FTAutoTrack */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6237C7FE2A7789E920C1310A6AF712D2 /* Build configuration list for PBXAggregateTarget "FTAutoTrack" */;
+			buildPhases = (
+			);
+			dependencies = (
+				814BDE877818344C63A61B813C0BC249 /* PBXTargetDependency */,
+			);
+			name = FTAutoTrack;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		06111D20C99D6D5F3F9D755E463B74D3 /* Pods-FTSDKiOSDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EC3BE8989B2298444FA710204B81C5 /* Pods-FTSDKiOSDemo-dummy.m */; };
-		1C7F660B74D3988DEE9612D662655161 /* Pods-FTSDKiOSDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D07D28C11049CC1B9FE4808F975FC9B /* Pods-FTSDKiOSDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E466C90548EF9968483E3CEF20F70913 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		5F085153F70DE5F11D8A7D60FDF9E762 /* Pods-FTSDKiOSDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EC3BE8989B2298444FA710204B81C5 /* Pods-FTSDKiOSDemo-dummy.m */; };
+		9FF16A4F5434D7EC75F1C8453E77DEF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		E21A9EF4CE60BDC1D498B4F9B897C588 /* Pods-FTSDKiOSDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D07D28C11049CC1B9FE4808F975FC9B /* Pods-FTSDKiOSDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		50DD5EB30B6B7C0968BE8EE3D271B741 /* PBXContainerItemProxy */ = {
+		59578D842B64E679C2F3659BBE024699 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 216B8D37F3BB74C2B7CDD38883C05B38;
+			remoteInfo = FTMobileAgent;
+		};
+		B45E4966A4E9703CE9DE7CB6A52C85AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7042D65370C15883195B23E076FC3F12;
+			remoteInfo = FTAutoTrack;
+		};
+		C35549CA605B9E5D3E0784D25F86733B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -35,58 +59,51 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C04C2E4A63C0BCF9EDB29E43C6DC3D8 /* FTMobileAgent.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FTMobileAgent.xcconfig; sourceTree = "<group>"; };
 		0D3599E78FA9977C98CCA2AB4D9597C4 /* Pods_FTSDKiOSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FTSDKiOSDemo.framework; path = "Pods-FTSDKiOSDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C608B62461CA55419BCBA71AA02F83 /* Pods-FTSDKiOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FTSDKiOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		20D13845E0BE60B902E71941B572154E /* Pods-FTSDKiOSDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FTSDKiOSDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		63EC3BE8989B2298444FA710204B81C5 /* Pods-FTSDKiOSDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FTSDKiOSDemo-dummy.m"; sourceTree = "<group>"; };
-		6ADBA8DBA4C726082EC21151C81BB5B2 /* FTMobileAgent.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FTMobileAgent.xcconfig; sourceTree = "<group>"; };
 		6D07D28C11049CC1B9FE4808F975FC9B /* Pods-FTSDKiOSDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FTSDKiOSDemo-umbrella.h"; sourceTree = "<group>"; };
 		7293B41E2A65789DF443A4EF540F479C /* Pods-FTSDKiOSDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FTSDKiOSDemo.modulemap"; sourceTree = "<group>"; };
+		8840AB752D4358618EDCED36B7B3B653 /* FTAutoTrack.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FTAutoTrack.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A39735E77D0F7C48D43DD84693EBB184 /* Pods-FTSDKiOSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FTSDKiOSDemo.release.xcconfig"; sourceTree = "<group>"; };
+		B0AD5CBC4B6788EEC78E19E4C5AFFDFB /* FTMobileAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FTMobileAgent.framework; sourceTree = "<group>"; };
+		D3919D29B6FDAC565CE3260D9F9E84A8 /* FTAutoTrack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FTAutoTrack.framework; sourceTree = "<group>"; };
 		E48263536EF1DB063972284813A58085 /* Pods-FTSDKiOSDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FTSDKiOSDemo-Info.plist"; sourceTree = "<group>"; };
 		F5BC6C5AA9E8EABC8E1EE666805BCB9A /* Pods-FTSDKiOSDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FTSDKiOSDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		F9B49D7F1AD7D3F892B7B124261AF1FF /* FTMobileAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FTMobileAgent.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		00D598EF252D233F8ECFAB88729B2070 /* Frameworks */ = {
+		7ED7F536CD903CF7F112A7B136322D90 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E466C90548EF9968483E3CEF20F70913 /* Foundation.framework in Frameworks */,
+				9FF16A4F5434D7EC75F1C8453E77DEF7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		37283BBEA3252BEB0D9EE26750848986 /* Pods */ = {
+		13B8AD5D9451B77D20F89FF6BD635052 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				46B310DA4A2CB972D7800F21FDDBC4FA /* FTMobileAgent */,
+				B0AD5CBC4B6788EEC78E19E4C5AFFDFB /* FTMobileAgent.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		46B310DA4A2CB972D7800F21FDDBC4FA /* FTMobileAgent */ = {
+		1ED8B4E339056C3C335E8A2D471C90C1 /* FTAutoTrack */ = {
 			isa = PBXGroup;
 			children = (
-				7B599B6770F46D9B1A09998D379F2003 /* Frameworks */,
-				5FD0A1E89AFD2CC0C6DBAF4252BF0A10 /* Support Files */,
+				A1876D29250B750907E5E94371238EA7 /* Frameworks */,
+				A029CA5BA8F177D1FB88538C15ED0F24 /* Support Files */,
 			);
-			name = FTMobileAgent;
-			path = FTMobileAgent;
-			sourceTree = "<group>";
-		};
-		5FD0A1E89AFD2CC0C6DBAF4252BF0A10 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6ADBA8DBA4C726082EC21151C81BB5B2 /* FTMobileAgent.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FTMobileAgent";
+			name = FTAutoTrack;
+			path = FTAutoTrack;
 			sourceTree = "<group>";
 		};
 		7B1F13FA1BC3296F388453D9916745B5 /* Pods-FTSDKiOSDemo */ = {
@@ -105,12 +122,13 @@
 			path = "Target Support Files/Pods-FTSDKiOSDemo";
 			sourceTree = "<group>";
 		};
-		7B599B6770F46D9B1A09998D379F2003 /* Frameworks */ = {
+		94AC6CE13E2C6584EC9E43E5E5CE34B4 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F9B49D7F1AD7D3F892B7B124261AF1FF /* FTMobileAgent.framework */,
+				0C04C2E4A63C0BCF9EDB29E43C6DC3D8 /* FTMobileAgent.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/FTMobileAgent";
 			sourceTree = "<group>";
 		};
 		9570AA35868A7E2A8FB94AB51E2B08EE /* Targets Support Files */ = {
@@ -119,6 +137,33 @@
 				7B1F13FA1BC3296F388453D9916745B5 /* Pods-FTSDKiOSDemo */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A029CA5BA8F177D1FB88538C15ED0F24 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8840AB752D4358618EDCED36B7B3B653 /* FTAutoTrack.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FTAutoTrack";
+			sourceTree = "<group>";
+		};
+		A1876D29250B750907E5E94371238EA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3919D29B6FDAC565CE3260D9F9E84A8 /* FTAutoTrack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A3E0E1411806D50EA5D295958F2A364F /* FTMobileAgent */ = {
+			isa = PBXGroup;
+			children = (
+				13B8AD5D9451B77D20F89FF6BD635052 /* Frameworks */,
+				94AC6CE13E2C6584EC9E43E5E5CE34B4 /* Support Files */,
+			);
+			name = FTMobileAgent;
+			path = FTMobileAgent;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -134,7 +179,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				37283BBEA3252BEB0D9EE26750848986 /* Pods */,
+				E1FFCDC107CAA6B7EE3756B2B61A8536 /* Pods */,
 				E46783F12AF931E664F0AB32DD5C4703 /* Products */,
 				9570AA35868A7E2A8FB94AB51E2B08EE /* Targets Support Files */,
 			);
@@ -148,6 +193,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E1FFCDC107CAA6B7EE3756B2B61A8536 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1ED8B4E339056C3C335E8A2D471C90C1 /* FTAutoTrack */,
+				A3E0E1411806D50EA5D295958F2A364F /* FTMobileAgent */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E46783F12AF931E664F0AB32DD5C4703 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,11 +213,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0803CA5B66CB365535354DC0914A5743 /* Headers */ = {
+		3D7F5C12CFFC4285E16AD01CB3FEE5ED /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C7F660B74D3988DEE9612D662655161 /* Pods-FTSDKiOSDemo-umbrella.h in Headers */,
+				E21A9EF4CE60BDC1D498B4F9B897C588 /* Pods-FTSDKiOSDemo-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,17 +226,18 @@
 /* Begin PBXNativeTarget section */
 		5F1FF661841F68A9316EFCDF6F2B5625 /* Pods-FTSDKiOSDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5AB43E5B53BCEE708FE0751911CE3719 /* Build configuration list for PBXNativeTarget "Pods-FTSDKiOSDemo" */;
+			buildConfigurationList = D67D0B1307130B7A6EC28B7EC9008A59 /* Build configuration list for PBXNativeTarget "Pods-FTSDKiOSDemo" */;
 			buildPhases = (
-				0803CA5B66CB365535354DC0914A5743 /* Headers */,
-				2770609FB5BFCBBD1991E60A333C0575 /* Sources */,
-				00D598EF252D233F8ECFAB88729B2070 /* Frameworks */,
-				E72A3ABB78DFFA672E40EE727BA1C0FE /* Resources */,
+				3D7F5C12CFFC4285E16AD01CB3FEE5ED /* Headers */,
+				B3ACC6B8880E711B3441557B455BD13D /* Sources */,
+				7ED7F536CD903CF7F112A7B136322D90 /* Frameworks */,
+				5205DD6E7FA78EC8678E21C328045BD0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5A3D3F0ADF5C911C89309758EA607BA6 /* PBXTargetDependency */,
+				21565F8B231B7CB24B3471A807306658 /* PBXTargetDependency */,
+				5D3E25DC036C94CC9F1452BA315831CD /* PBXTargetDependency */,
 			);
 			name = "Pods-FTSDKiOSDemo";
 			productName = "Pods-FTSDKiOSDemo";
@@ -211,6 +266,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				7042D65370C15883195B23E076FC3F12 /* FTAutoTrack */,
 				216B8D37F3BB74C2B7CDD38883C05B38 /* FTMobileAgent */,
 				5F1FF661841F68A9316EFCDF6F2B5625 /* Pods-FTSDKiOSDemo */,
 			);
@@ -218,7 +274,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E72A3ABB78DFFA672E40EE727BA1C0FE /* Resources */ = {
+		5205DD6E7FA78EC8678E21C328045BD0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -228,29 +284,73 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2770609FB5BFCBBD1991E60A333C0575 /* Sources */ = {
+		B3ACC6B8880E711B3441557B455BD13D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06111D20C99D6D5F3F9D755E463B74D3 /* Pods-FTSDKiOSDemo-dummy.m in Sources */,
+				5F085153F70DE5F11D8A7D60FDF9E762 /* Pods-FTSDKiOSDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5A3D3F0ADF5C911C89309758EA607BA6 /* PBXTargetDependency */ = {
+		21565F8B231B7CB24B3471A807306658 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FTAutoTrack;
+			target = 7042D65370C15883195B23E076FC3F12 /* FTAutoTrack */;
+			targetProxy = B45E4966A4E9703CE9DE7CB6A52C85AD /* PBXContainerItemProxy */;
+		};
+		5D3E25DC036C94CC9F1452BA315831CD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FTMobileAgent;
 			target = 216B8D37F3BB74C2B7CDD38883C05B38 /* FTMobileAgent */;
-			targetProxy = 50DD5EB30B6B7C0968BE8EE3D271B741 /* PBXContainerItemProxy */;
+			targetProxy = 59578D842B64E679C2F3659BBE024699 /* PBXContainerItemProxy */;
+		};
+		814BDE877818344C63A61B813C0BC249 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FTMobileAgent;
+			target = 216B8D37F3BB74C2B7CDD38883C05B38 /* FTMobileAgent */;
+			targetProxy = C35549CA605B9E5D3E0784D25F86733B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2748D0B09B975F5398FC8617EC3D2EC9 /* Release */ = {
+		1BCB63BB621E4546A6E85E314914AC3D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A39735E77D0F7C48D43DD84693EBB184 /* Pods-FTSDKiOSDemo.release.xcconfig */;
+			baseConfigurationReference = 8840AB752D4358618EDCED36B7B3B653 /* FTAutoTrack.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		288C2BF199D0DB1B3990458E2547C4D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C04C2E4A63C0BCF9EDB29E43C6DC3D8 /* FTMobileAgent.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		46E343A3B9C4B73F5C9C2DF6C3BC9ED8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14C608B62461CA55419BCBA71AA02F83 /* Pods-FTSDKiOSDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -281,15 +381,14 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		4C67CD7E64C4F4F4350A8A42364EEB60 /* Debug */ = {
+		49CA063D6BE0BF66BAB396CDB1048DB8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6ADBA8DBA4C726082EC21151C81BB5B2 /* FTMobileAgent.xcconfig */;
+			baseConfigurationReference = 0C04C2E4A63C0BCF9EDB29E43C6DC3D8 /* FTMobileAgent.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -300,8 +399,9 @@
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 		510B057D2E9F059C50D52DA5D90F3ACF /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -362,44 +462,6 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
-		};
-		7A92FD1B80F5FEA19490B838AF046FFF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14C608B62461CA55419BCBA71AA02F83 /* Pods-FTSDKiOSDemo.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-FTSDKiOSDemo/Pods-FTSDKiOSDemo-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FTSDKiOSDemo/Pods-FTSDKiOSDemo.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		804E13245C9FBBE6A340C555CA8B2B4C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -465,9 +527,48 @@
 			};
 			name = Debug;
 		};
-		C4DC52ADE86131B483885A7ED7986BF0 /* Release */ = {
+		9511A29EFFE8852CB5923A91AEAFF773 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6ADBA8DBA4C726082EC21151C81BB5B2 /* FTMobileAgent.xcconfig */;
+			baseConfigurationReference = A39735E77D0F7C48D43DD84693EBB184 /* Pods-FTSDKiOSDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FTSDKiOSDemo/Pods-FTSDKiOSDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FTSDKiOSDemo/Pods-FTSDKiOSDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A88CAFF3CB5DAE745AB9288A245AC336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8840AB752D4358618EDCED36B7B3B653 /* FTAutoTrack.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -485,11 +586,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1E87208AB0E288365EC6F96DF234A3AA /* Build configuration list for PBXAggregateTarget "FTMobileAgent" */ = {
+		0FE0D4255098BF0007844D0433AA3956 /* Build configuration list for PBXAggregateTarget "FTMobileAgent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4C67CD7E64C4F4F4350A8A42364EEB60 /* Debug */,
-				C4DC52ADE86131B483885A7ED7986BF0 /* Release */,
+				288C2BF199D0DB1B3990458E2547C4D5 /* Debug */,
+				49CA063D6BE0BF66BAB396CDB1048DB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -503,11 +604,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5AB43E5B53BCEE708FE0751911CE3719 /* Build configuration list for PBXNativeTarget "Pods-FTSDKiOSDemo" */ = {
+		6237C7FE2A7789E920C1310A6AF712D2 /* Build configuration list for PBXAggregateTarget "FTAutoTrack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7A92FD1B80F5FEA19490B838AF046FFF /* Debug */,
-				2748D0B09B975F5398FC8617EC3D2EC9 /* Release */,
+				1BCB63BB621E4546A6E85E314914AC3D /* Debug */,
+				A88CAFF3CB5DAE745AB9288A245AC336 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D67D0B1307130B7A6EC28B7EC9008A59 /* Build configuration list for PBXNativeTarget "Pods-FTSDKiOSDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46E343A3B9C4B73F5C9C2DF6C3BC9ED8 /* Debug */,
+				9511A29EFFE8852CB5923A91AEAFF773 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

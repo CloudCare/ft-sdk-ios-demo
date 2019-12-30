@@ -1,16 +1,20 @@
 PODS:
-  - FTMobileAgent (1.0.0-alpha.14)
+  - FTAutoTrack (1.0.0-alpha.4):
+    - FTMobileAgent (~> 1.0.0-alpha.17)
+  - FTMobileAgent (1.0.0-alpha.17)
 
 DEPENDENCIES:
-  - FTMobileAgent (~> 1.0.0-alpha.14)
+  - FTAutoTrack (~> 1.0.0-alpha.4)
 
 SPEC REPOS:
   trunk:
+    - FTAutoTrack
     - FTMobileAgent
 
 SPEC CHECKSUMS:
-  FTMobileAgent: 55f419f23ec02afbfbd6168011a44c12e9d8b57e
+  FTAutoTrack: 31a50c766228dde416ae034bd7efe38b6f10f2cd
+  FTMobileAgent: ea6bf09b72a3783373cf2e94e644a4189a1dbf9d
 
-PODFILE CHECKSUM: 4b085c45bef9db989f953e87b54e164525489619
+PODFILE CHECKSUM: 20136da03d156fe748e0d8699669d6199019108f
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.8.3

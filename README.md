@@ -4,17 +4,23 @@
 
 ![Cocoapods platforms](https://img.shields.io/cocoapods/p/FTMobileAgent)
 ![Cocoapods](https://img.shields.io/cocoapods/v/FTMobileAgent)
+![Cocoapods](https://img.shields.io/cocoapods/v/FTAutoTrack)
 ![Cocoapods](https://img.shields.io/cocoapods/l/FTAutoTrack)
+
 
 ## 安装
 -  **通过源码集成**
    - 获取源码。  
      配置下载链接：将想获取的 SDK 版本的版本号替换下载链接中的 VERSION。  
-	 下载链接：https://zhuyun-static-files-production.oss-cn-hangzhou.aliyuncs.com/ft-sdk-package/ios/FTMobileAgent/VERSION.zip
+	 含全埋点的下载链接：https://zhuyun-static-files-production.oss-cn-hangzhou.aliyuncs.com/ft-sdk-package/ios/FTAutoTrack/VERSION.zip   
+	 
+	 无全埋点的下载链接：https://zhuyun-static-files-production.oss-cn-hangzhou.aliyuncs.com/ft-sdk-package/ios/FTMobileAgent/VERSION.zip
    - 将 SDK 源代码导入 App 项目，并选中 Copy items if needed;
    - 添加依赖库：项目设置 "Build Phase" -> "Link Binary With Libraries" 添加：libicucore、libsqlite3 和 libz。
 -  **通过 CocoaPods 集成**
-  - 配置 Podfile 文件，在 Podfile 文件中添加 `pod 'FTMobileAgent'`
+  - 配置 Podfile 文件。
+     如果需要全埋点功能，在 Podfile 文件中添加  `pod 'FTAutoTrack'`，不需要则
+	 `pod 'FTMobileAgent'`
   - 在 Podfile 目录下执行 pod install 安装 SDK。
  
 ## 配置
@@ -24,7 +30,7 @@
 
 - 添加初始化代码
   请将以下代码添加到 `-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`
-  
+  eg:
   ```objective-c
     FTMobileConfig *config = [FTMobileConfig new];
     config.enableRequestSigning = YES;
@@ -32,6 +38,10 @@
     config.akId = akId;
     config.isDebug = YES;
     config.metricsUrl = 写入地址;
+	config.enableAutoTrack = YES; //全埋点开关
+    config.autoTrackEventType = FTAutoTrackEventTypeAppStart|FTAutoTrackEventTypeAppClick|FTAutoTrackEventTypeAppViewScreen; //全埋点抓取事件类型
+	config.whiteViewClass = @[UIButton.class,UIImageView.class]; //全埋点UI控件白名单
+	config.whiteVCList = @["HomeViewController"]; //全埋点控制器白名单
     [FTMobileAgent startWithConfigOptions:config];
   ``` 
 
@@ -43,6 +53,12 @@
 |akId|NSString|access key ID| enableRequestSigning 为 true 时，必须要填|
 |akSecret|NSString|access key Secret|enableRequestSigning 为 true 时，必须要填|
 |isDebug|BOOL|设置是否允许打印日志|否（默认NO）|
+|enableAutoTrack|BOOL|设置是否开启全埋点|否（默认NO）|
+|autoTrackEventType|NS_OPTIONS|全埋点抓取事件枚举|否（默认FTAutoTrackTypeNone）|
+|whiteViewClass|NSArray|UI控件白名单|否|
+|blackViewClass|NSArray|UI控件黑名单|否|
+|whiteVCList|NSArray|控制器白名单|否|
+|blackVCList|NSArray|控制器黑名单|否|
 
 ## 方法
  1、FT SDK 公开了2个埋点方法，用户通过这三个方法可以主动在需要的地方实现埋点，然后将数据上传到服务端。
@@ -85,4 +101,5 @@
 - IMEI
    因为隐私问题，苹果用户在 iOS5 以后禁用代码直接获取 IMEI 的值。所以 iOS sdk 中不支持获取 IMEI。
    
+
 

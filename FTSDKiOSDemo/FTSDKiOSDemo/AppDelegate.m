@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import <FTMobileAgent/FTMobileAgent.h>
-#import <FTMobileAgent/FTMobileConfig.h>
 @interface AppDelegate ()
 
 @end
@@ -24,6 +23,9 @@
     config.akId = @"accid";
     config.isDebug = YES;
     config.metricsUrl = @"http://10.100.64.106:19557/v1/write/metrics";
+    config.enableAutoTrack = YES;
+    config.autoTrackEventType = FTAutoTrackEventTypeAppClick|
+    FTAutoTrackEventTypeAppViewScreen;
     [FTMobileAgent startWithConfigOptions:config];
     return YES;
 }
