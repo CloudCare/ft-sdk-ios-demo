@@ -18,6 +18,7 @@
    - 将 SDK 源代码导入 App 项目，并选中 Copy items if needed;
    - 添加依赖库：项目设置 "Build Phase" -> "Link Binary With Libraries" 添加：libicucore、libsqlite3 和 libz。
 -  **通过 CocoaPods 集成**
+
   - 配置 Podfile 文件。
      如果需要全埋点功能，在 Podfile 文件中添加  `pod 'FTAutoTrack'`，不需要则
 	 `pod 'FTMobileAgent'`
@@ -38,10 +39,11 @@
     config.akId = akId;
     config.isDebug = YES;
     config.metricsUrl = 写入地址;
-	config.enableAutoTrack = YES; //全埋点开关
-    config.autoTrackEventType = FTAutoTrackEventTypeAppStart|FTAutoTrackEventTypeAppClick|FTAutoTrackEventTypeAppViewScreen; //全埋点抓取事件类型
-	config.whiteViewClass = @[UIButton.class,UIImageView.class]; //全埋点UI控件白名单
-	config.whiteVCList = @["HomeViewController"]; //全埋点控制器白名单
+	config.enableAutoTrack = YES; 
+    config.autoTrackEventType = FTAutoTrackEventTypeAppStart|FTAutoTrackEventTypeAppClick|FTAutoTrackEventTypeAppViewScreen; 
+	config.monitorInfoType =FTMonitorInfoTypeAll;
+	config.whiteViewClass = @[UIButton.class,UIImageView.class]; 
+	config.whiteVCList = @["HomeViewController"]; 
     [FTMobileAgent startWithConfigOptions:config];
   ``` 
 
@@ -59,9 +61,47 @@
 |blackViewClass|NSArray|UI控件黑名单|否|
 |whiteVCList|NSArray|控制器白名单|否|
 |blackVCList|NSArray|控制器黑名单|否|
+|monitorInfoType|NS_OPTIONS|采集数据|否|
 
 ## 方法
- 1、FT SDK 公开了2个埋点方法，用户通过这三个方法可以主动在需要的地方实现埋点，然后将数据上传到服务端。
+### 用户的绑定与注销
+ 1、FT SDK 提供了绑定用户和注销用户的方法，只有在用户登录的状态下，进行数据的传输。
+ - 用户绑定：
+ 
+```
+  /**
+绑定用户信息
+ @param name     用户名
+ @param Id       用户Id
+ @param exts     用户其他信息
+*/
+- (void)bindUserWithName:(NSString *)name Id:(NSString *)Id exts:(nullable NSDictionary *)exts;
+```
+
+- 用户注销：
+
+```
+/**
+ 注销当前用户
+*/
+- (void)logout;
+```
+
+2、方法使用示例
+
+```
+//登录后 绑定用户信息
+    [[FTMobileAgent sharedInstance] bindUserWithName:userName Id:userId exts:nil];
+```
+
+```
+//登出后 注销当前用户
+    [[FTMobileAgent sharedInstance] logout];
+```
+
+
+### 埋点方法
+ 1、FT SDK 公开了2个埋点方法，用户通过这两个方法可以在需要的地方实现埋点，然后将数据上传到服务端。
 
 -  方法一：
 
