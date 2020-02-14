@@ -4,6 +4,11 @@
 
 ![Cocoapods platforms](https://img.shields.io/cocoapods/p/FTMobileAgent)
 ![Cocoapods](https://img.shields.io/cocoapods/v/FTMobileAgent)
+![Cocoapods](https://img.shields.io/cocoapods/l/FTMobileAgent)
+
+**FTAutoTrack**
+
+![Cocoapods platforms](https://img.shields.io/cocoapods/p/FTAutoTrack)
 ![Cocoapods](https://img.shields.io/cocoapods/v/FTAutoTrack)
 ![Cocoapods](https://img.shields.io/cocoapods/l/FTAutoTrack)
 
