@@ -1,4 +1,5 @@
-# FT Mobile SDK iOS
+# Dataflux-SDK-iOS
+https://github.com/CloudCare/dataflux-sdk-ios
 
 **FTMobileAgent**
 
@@ -13,7 +14,7 @@
 ![Cocoapods](https://img.shields.io/cocoapods/l/FTAutoTrack)
 
 
-##一、 导入SDK
+## 一、 导入SDK
    你可以使用下面方法进行导入：
 ###  方法1.直接下载下来安装
 1.下载SDK。    
