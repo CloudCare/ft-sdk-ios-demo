@@ -1,4 +1,4 @@
-# FT Mobile SDK iOS
+# Dataflux Mobile SDK iOS
 
 **FTMobileAgent**
 
