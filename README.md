@@ -73,7 +73,7 @@
 |blackVCList|NSArray|控制器黑名单|否|
 |monitorInfoType|NS_OPTIONS|采集数据|否|
 
-**关于GPU使用率获取 **   
+**关于GPU使用率获取**   
   获取GPU使用率，需要使用到 `IOKit.framework ` 私有库，**可能会影响AppStore上架**。如果需要此功能，需要在你的应用安装 `IOKit.framework ` 私有库。导入后，请在编译时加入 `FT_TRACK_GPUUSAGE` 标志，SDK将会为你获取GPU使用率。    
   XCode设置方法 :    
   
