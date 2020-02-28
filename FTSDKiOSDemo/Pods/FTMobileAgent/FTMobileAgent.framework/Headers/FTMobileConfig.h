@@ -9,39 +9,95 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 /* SDK版本 */
-#define ZY_SDK_VERSION @"1.0.0"
+#define FT_SDK_VERSION @"1.0.0"
 
 /* 默认应用版本 */
-#define ZY_APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
-/* 抓取事件 枚举 */
+#define FT_APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+/**
+* @abstract
+* AutoTrack 抓取信息
+*
+* @discussion
+*   FTAutoTrackEventTypeAppStart       - 项目启动
+*   FTAutoTrackEventTypeAppClick       - 点击事件
+*   FTAutoTrackEventTypeAppViewScreen  - 页面的生命周期 open/close
+*/
 typedef NS_OPTIONS(NSInteger, FTAutoTrackEventType) {
     FTAutoTrackTypeNone          = 0,
     FTAutoTrackEventTypeAppStart      = 1 << 0,
-    FTAutoTrackEventTypeAppEnd        = 1 << 1,
-    FTAutoTrackEventTypeAppClick      = 1 << 2,
-    FTAutoTrackEventTypeAppViewScreen = 1 << 3,
+    FTAutoTrackEventTypeAppClick      = 1 << 1,
+    FTAutoTrackEventTypeAppViewScreen = 1 << 2,
+};
+/**
+* @abstract
+* TAG 中的设备信息
+*
+* @discussion
+*   FTMonitorInfoTypeBattery  - 电池总量、使用量
+*   FTMonitorInfoTypeMemory   - 内存总量、使用率
+*   FTMonitorInfoTypeCpu      - CPU型号、占用率
+*   FTMonitorInfoTypeCpu      - GPU型号、占用率
+*   FTMonitorInfoTypeNetwork  - 网络的信号强度、网络速度、类型、代理
+*   FTMonitorInfoTypeCamera   - 前置/后置 像素
+*   FTMonitorInfoTypeLocation - 位置信息  eg:上海
+*/
+typedef NS_OPTIONS(NSInteger, FTMonitorInfoType) {
+    FTMonitorInfoTypeAll          = 1 << 0,
+    FTMonitorInfoTypeBattery      = 1 << 1,
+    FTMonitorInfoTypeMemory       = 1 << 2,
+    FTMonitorInfoTypeCpu          = 1 << 3,
+    FTMonitorInfoTypeGpu          = 1 << 4,
+    FTMonitorInfoTypeNetwork      = 1 << 5,
+    FTMonitorInfoTypeCamera       = 1 << 6,
+    FTMonitorInfoTypeLocation     = 1 << 7,
 };
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FTMobileConfig : NSObject
+/**
+指定初始化方法，设置 metricsUrl
+@param metricsUrl FT-GateWay metrics 写入地址
+@param akId       access key ID
+@param akSecret   access key Secret
+@param enableRequestSigning 配置是否需要进行请求签名 为YES 时akId与akSecret 不能为空
+@return 配置对象
+*/
+- (instancetype)initWithMetricsUrl:(nonnull NSString *)metricsUrl akId:(nonnull NSString *)akId akSecret:(nonnull NSString *)akSecret enableRequestSigning:(BOOL)enableRequestSigning NS_DESIGNATED_INITIALIZER;
+/// 禁用 init 初始化
+- (instancetype)init NS_UNAVAILABLE;
+
+/// 禁用 new 初始化
++ (instancetype)new NS_UNAVAILABLE;
 #pragma mark - 基本设置
-// SDK版本
+/* SDK版本 */
 @property (nonatomic, copy) NSString *sdkVersion;
 
-// 应用版本(默认:info.plist中CFBundleShortVersionString对应的值)
+/* 应用版本(默认:info.plist中CFBundleShortVersionString对应的值)*/
 @property (nonatomic, copy) NSString *appVersion;
-//应用名称（默认：info.plist中的CFBundleDisplayName）
+
+/*应用名称（默认：info.plist中的CFBundleDisplayName）*/
 @property (nonatomic ,copy) NSString *appName;
+
+/*FT-GateWay metrics 写入地址*/
 @property (nonatomic, copy) NSString *metricsUrl;
 
+/*配置是否需要进行请求签名*/
 @property (nonatomic, assign) BOOL enableRequestSigning;
 
+/*access key ID*/
 @property (nonatomic, copy) NSString *akId;
 
+/*access key Secret*/
 @property (nonatomic, copy) NSString *akSecret;
 
-@property (nonatomic, assign) BOOL isDebug;
+/*设置是否允许打印日志*/
+@property (nonatomic, assign) BOOL enableLog;
 
+/*TAG 中的设备信息*/
+@property (nonatomic) FTMonitorInfoType monitorInfoType;
+
+/*是否开启绑定用户数据*/
+@property (nonatomic, assign) BOOL needBindUser;
 
 #pragma mark ==========  FTAutoTrack 全埋点配置 ==========
 /**
@@ -85,8 +141,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSArray *blackVCList;
 
 
-/// 是否自动收集 App Crash 日志，该功能默认是关闭的
-//@property (nonatomic) BOOL enableTrackAppCrash;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END
