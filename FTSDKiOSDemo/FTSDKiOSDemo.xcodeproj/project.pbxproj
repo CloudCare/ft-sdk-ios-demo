@@ -14,8 +14,10 @@
 		4A85302023A35D4F00B40B5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A85301F23A35D4F00B40B5D /* Assets.xcassets */; };
 		4A85302323A35D4F00B40B5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A85302123A35D4F00B40B5D /* LaunchScreen.storyboard */; };
 		4A85302623A35D4F00B40B5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85302523A35D4F00B40B5D /* main.m */; };
-		4A85302F23A36CBC00B40B5D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85302E23A36CBC00B40B5D /* HomeViewController.m */; };
-		4A85303223A36F5500B40B5D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85303123A36F5500B40B5D /* SecondViewController.m */; };
+		4AAF2B642411059300552B6D /* TestFlowTrackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF2B562411058F00552B6D /* TestFlowTrackVC.m */; };
+		4AAF2B652411059300552B6D /* UITestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF2B5B2411059100552B6D /* UITestVC.m */; };
+		4AAF2B672411059300552B6D /* RootTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF2B5F2411059200552B6D /* RootTabbarVC.m */; };
+		4AAF2B692411059300552B6D /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF2B612411059300552B6D /* DemoViewController.m */; };
 		FB50B2D3FFCE495FBCADB753 /* Pods_FTSDKiOSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62EA417EFC59F22AD1BD9784 /* Pods_FTSDKiOSDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,10 +35,14 @@
 		4A85302223A35D4F00B40B5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A85302423A35D4F00B40B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A85302523A35D4F00B40B5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4A85302D23A36CBC00B40B5D /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		4A85302E23A36CBC00B40B5D /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		4A85303023A36F5500B40B5D /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		4A85303123A36F5500B40B5D /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		4AAF2B562411058F00552B6D /* TestFlowTrackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFlowTrackVC.m; sourceTree = "<group>"; };
+		4AAF2B582411059000552B6D /* UITestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITestVC.h; sourceTree = "<group>"; };
+		4AAF2B5A2411059100552B6D /* TestFlowTrackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlowTrackVC.h; sourceTree = "<group>"; };
+		4AAF2B5B2411059100552B6D /* UITestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITestVC.m; sourceTree = "<group>"; };
+		4AAF2B5E2411059200552B6D /* RootTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabbarVC.h; sourceTree = "<group>"; };
+		4AAF2B5F2411059200552B6D /* RootTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabbarVC.m; sourceTree = "<group>"; };
+		4AAF2B612411059300552B6D /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		4AAF2B622411059300552B6D /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		62EA417EFC59F22AD1BD9784 /* Pods_FTSDKiOSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FTSDKiOSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5A44C3FDEE8AB07F72B2AC /* Pods-FTSDKiOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTSDKiOSDemo.debug.xcconfig"; path = "Target Support Files/Pods-FTSDKiOSDemo/Pods-FTSDKiOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,10 +84,14 @@
 				4A85301423A35D4C00B40B5D /* AppDelegate.m */,
 				4A85301623A35D4C00B40B5D /* SceneDelegate.h */,
 				4A85301723A35D4C00B40B5D /* SceneDelegate.m */,
-				4A85302D23A36CBC00B40B5D /* HomeViewController.h */,
-				4A85302E23A36CBC00B40B5D /* HomeViewController.m */,
-				4A85303023A36F5500B40B5D /* SecondViewController.h */,
-				4A85303123A36F5500B40B5D /* SecondViewController.m */,
+				4AAF2B622411059300552B6D /* DemoViewController.h */,
+				4AAF2B612411059300552B6D /* DemoViewController.m */,
+				4AAF2B5E2411059200552B6D /* RootTabbarVC.h */,
+				4AAF2B5F2411059200552B6D /* RootTabbarVC.m */,
+				4AAF2B5A2411059100552B6D /* TestFlowTrackVC.h */,
+				4AAF2B562411058F00552B6D /* TestFlowTrackVC.m */,
+				4AAF2B582411059000552B6D /* UITestVC.h */,
+				4AAF2B5B2411059100552B6D /* UITestVC.m */,
 				4A85301923A35D4C00B40B5D /* ViewController.h */,
 				4A85301A23A35D4C00B40B5D /* ViewController.m */,
 				4A85301C23A35D4C00B40B5D /* Main.storyboard */,
@@ -206,12 +216,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A85303223A36F5500B40B5D /* SecondViewController.m in Sources */,
+				4AAF2B672411059300552B6D /* RootTabbarVC.m in Sources */,
 				4A85301B23A35D4C00B40B5D /* ViewController.m in Sources */,
+				4AAF2B692411059300552B6D /* DemoViewController.m in Sources */,
 				4A85301523A35D4C00B40B5D /* AppDelegate.m in Sources */,
+				4AAF2B642411059300552B6D /* TestFlowTrackVC.m in Sources */,
+				4AAF2B652411059300552B6D /* UITestVC.m in Sources */,
 				4A85302623A35D4F00B40B5D /* main.m in Sources */,
 				4A85301823A35D4C00B40B5D /* SceneDelegate.m in Sources */,
-				4A85302F23A36CBC00B40B5D /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

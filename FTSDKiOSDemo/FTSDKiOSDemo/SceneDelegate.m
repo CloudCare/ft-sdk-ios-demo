@@ -1,5 +1,6 @@
 #import "SceneDelegate.h"
-#import "HomeViewController.h"
+#import "DemoViewController.h"
+#import "RootTabbarVC.h"
 @interface SceneDelegate ()
 
 @end
@@ -11,10 +12,17 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-    HomeViewController *rootVC = [[HomeViewController alloc] init];
-    UINavigationController *rootNav = [[UINavigationController alloc] initWithRootViewController:rootVC];
-    self.window.rootViewController = rootNav;
-    [self.window makeKeyAndVisible];
+    UITabBarController *tab = [[UITabBarController alloc]init];
+       DemoViewController *rootVC = [[DemoViewController alloc] init];
+       rootVC.title = @"home";
+      
+       UINavigationController *rootNav = [[UINavigationController alloc] initWithRootViewController:rootVC];
+       RootTabbarVC *second =  [RootTabbarVC new];
+       second.title = @"second";
+       tab.viewControllers = @[rootNav,second];
+      
+       self.window.rootViewController = tab;
+       [self.window makeKeyAndVisible];
 }
 
 

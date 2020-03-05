@@ -6,5 +6,5 @@ target 'FTSDKiOSDemo' do
   use_frameworks!
 
   # Pods for FTSDKiOSDemo
-   pod 'FTAutoTrack', '~>1.0.0-alpha.6'
+   pod 'FTAutoTrack', '~>1.0.1-alpha.2'
 end
