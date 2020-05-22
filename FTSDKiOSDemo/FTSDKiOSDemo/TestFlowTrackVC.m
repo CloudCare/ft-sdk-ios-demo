@@ -7,7 +7,7 @@
 //
 
 #import "TestFlowTrackVC.h"
-#import <FTMobileAgent/FTMobileAgent.h>
+#import <FTMobileAgent.h>
 @interface TestFlowTrackVC ()
 @property (nonatomic, assign)  long preTime;
 @property (nonatomic, copy)  NSString *traceId;

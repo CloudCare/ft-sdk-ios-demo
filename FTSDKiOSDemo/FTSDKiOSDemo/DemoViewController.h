@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "RootVController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DemoViewController : UIViewController
+@interface DemoViewController : RootVController
 
 @end
 

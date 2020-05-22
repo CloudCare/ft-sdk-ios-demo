@@ -7,11 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import <FTMobileAgent/FTMobileAgent.h>
-//配置测试 SDK config
-NSString * const ACCESS_KEY_ID  = @"akId";
-NSString * const ACCESS_KEY_SECRET  = @"akSecret";
-NSString * const ACCESS_SERVER_URL  = @"http://10.100.64.106:19457/v1/write/metrics";
+#import <FTMobileAgent.h>
+
 @interface AppDelegate ()
 
 @end
@@ -21,15 +18,21 @@ NSString * const ACCESS_SERVER_URL  = @"http://10.100.64.106:19457/v1/write/metr
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    FTMobileConfig *config = [[FTMobileConfig alloc]initWithMetricsUrl:ACCESS_SERVER_URL akId:ACCESS_KEY_ID akSecret:ACCESS_KEY_SECRET enableRequestSigning:YES];
+    NSProcessInfo *processInfo = [NSProcessInfo processInfo];
+    NSString *akId =[processInfo environment][@"ACCESS_KEY_ID"];
+    NSString *akSecret = [processInfo environment][@"ACCESS_KEY_SECRET"];
+    NSString *url = [processInfo environment][@"ACCESS_SERVER_URL"];
+     if (akId && akSecret && url) {
+    FTMobileConfig *config = [[FTMobileConfig alloc]initWithMetricsUrl:url akId:akId akSecret:akSecret enableRequestSigning:YES];
     config.enableLog = YES;
+    [config setEnableDescLog:YES];
     config.enableAutoTrack = YES;
+    config.needBindUser = YES;
     config.autoTrackEventType = FTAutoTrackEventTypeAppClick|FTAutoTrackEventTypeAppLaunch|FTAutoTrackEventTypeAppViewScreen;
-    config.monitorInfoType = FTMonitorInfoTypeAll;
-    [config enableTrackScreenFlow:NO];
-    [config setTrackViewFlowProduct:@"iOSDemo"];
-    [FTMobileAgent startWithConfigOptions:config];
+    [config enableTrackScreenFlow:YES];
     
+    [FTMobileAgent startWithConfigOptions:config];
+    }
     return YES;
 }
 
