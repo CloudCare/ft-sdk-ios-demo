@@ -8,14 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3267FA1EC39E798EC45C1926 /* Pods_FTSDKiOSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13534F8F65577AF56B027384 /* Pods_FTSDKiOSDemo.framework */; };
+		4A37A95F2488974E00E0381B /* TestWKWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A37A95D2488974E00E0381B /* TestWKWebViewVC.m */; };
 		4A3E7E8824628B340004A499 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3E7E8724628B340004A499 /* UIKit.framework */; };
 		4A3E7E9824628E650004A499 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3E7E9724628E650004A499 /* libresolv.9.tbd */; };
-		4A4F0DA52477A862000A2A76 /* SubFlowTrack3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F0D992477A860000A2A76 /* SubFlowTrack3.m */; };
-		4A4F0DA62477A862000A2A76 /* TestSubFlowTrack2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F0D9A2477A860000A2A76 /* TestSubFlowTrack2.m */; };
-		4A4F0DA72477A862000A2A76 /* SubFlowTrack1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F0D9C2477A860000A2A76 /* SubFlowTrack1.m */; };
-		4A4F0DA82477A862000A2A76 /* TestSubFlowTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F0D9E2477A861000A2A76 /* TestSubFlowTrack.m */; };
-		4A4F0DA92477A862000A2A76 /* SubFlowTrack2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F0DA02477A861000A2A76 /* SubFlowTrack2.m */; };
-		4A4F0DAA2477A862000A2A76 /* SubFlowTrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F0DA12477A861000A2A76 /* SubFlowTrackCell.m */; };
+		4A4D91BB2509D6FF004B9FA0 /* TestBluetoothList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D91B92509D6FE004B9FA0 /* TestBluetoothList.m */; };
+		4A4D91BC2509D6FF004B9FA0 /* TestCustomTrackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D91BA2509D6FF004B9FA0 /* TestCustomTrackVC.m */; };
+		4A4D91C0250A0981004B9FA0 /* FrintHookTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4D91BF250A0981004B9FA0 /* FrintHookTest.swift */; };
 		4A4F0DAB2477A913000A2A76 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3E7F0B2464238D0004A499 /* IOKit.framework */; };
 		4A4F0DB02477A972000A2A76 /* RootVController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F0DAE2477A971000A2A76 /* RootVController.m */; };
 		4A85301523A35D4C00B40B5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85301423A35D4C00B40B5D /* AppDelegate.m */; };
@@ -25,7 +23,6 @@
 		4A85302023A35D4F00B40B5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A85301F23A35D4F00B40B5D /* Assets.xcassets */; };
 		4A85302323A35D4F00B40B5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A85302123A35D4F00B40B5D /* LaunchScreen.storyboard */; };
 		4A85302623A35D4F00B40B5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A85302523A35D4F00B40B5D /* main.m */; };
-		4AAF2B642411059300552B6D /* TestFlowTrackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF2B562411058F00552B6D /* TestFlowTrackVC.m */; };
 		4AAF2B652411059300552B6D /* UITestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF2B5B2411059100552B6D /* UITestVC.m */; };
 		4AAF2B672411059300552B6D /* RootTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF2B5F2411059200552B6D /* RootTabbarVC.m */; };
 		4AAF2B692411059300552B6D /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAF2B612411059300552B6D /* DemoViewController.m */; };
@@ -34,24 +31,20 @@
 /* Begin PBXFileReference section */
 		13534F8F65577AF56B027384 /* Pods_FTSDKiOSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FTSDKiOSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		320A54C3EF4A029D155CDF06 /* Pods-FTSDKiOSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTSDKiOSDemo.release.xcconfig"; path = "Target Support Files/Pods-FTSDKiOSDemo/Pods-FTSDKiOSDemo.release.xcconfig"; sourceTree = "<group>"; };
+		4A37A95D2488974E00E0381B /* TestWKWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestWKWebViewVC.m; sourceTree = "<group>"; };
+		4A37A95E2488974E00E0381B /* TestWKWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestWKWebViewVC.h; sourceTree = "<group>"; };
 		4A3E7E8724628B340004A499 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4A3E7E9724628E650004A499 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		4A3E7F0B2464238D0004A499 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = ../../IOKit.framework; sourceTree = "<group>"; };
-		4A4F0D992477A860000A2A76 /* SubFlowTrack3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubFlowTrack3.m; sourceTree = "<group>"; };
-		4A4F0D9A2477A860000A2A76 /* TestSubFlowTrack2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSubFlowTrack2.m; sourceTree = "<group>"; };
-		4A4F0D9B2477A860000A2A76 /* SubFlowTrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubFlowTrackCell.h; sourceTree = "<group>"; };
-		4A4F0D9C2477A860000A2A76 /* SubFlowTrack1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubFlowTrack1.m; sourceTree = "<group>"; };
-		4A4F0D9D2477A860000A2A76 /* SubFlowTrack2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubFlowTrack2.h; sourceTree = "<group>"; };
-		4A4F0D9E2477A861000A2A76 /* TestSubFlowTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSubFlowTrack.m; sourceTree = "<group>"; };
-		4A4F0D9F2477A861000A2A76 /* TestSubFlowTrack2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSubFlowTrack2.h; sourceTree = "<group>"; };
-		4A4F0DA02477A861000A2A76 /* SubFlowTrack2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubFlowTrack2.m; sourceTree = "<group>"; };
-		4A4F0DA12477A861000A2A76 /* SubFlowTrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubFlowTrackCell.m; sourceTree = "<group>"; };
-		4A4F0DA22477A861000A2A76 /* SubFlowTrack3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubFlowTrack3.h; sourceTree = "<group>"; };
-		4A4F0DA32477A862000A2A76 /* TestSubFlowTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSubFlowTrack.h; sourceTree = "<group>"; };
-		4A4F0DA42477A862000A2A76 /* SubFlowTrack1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubFlowTrack1.h; sourceTree = "<group>"; };
+		4A4D91B72509D6FE004B9FA0 /* TestCustomTrackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCustomTrackVC.h; sourceTree = "<group>"; };
+		4A4D91B82509D6FE004B9FA0 /* TestBluetoothList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestBluetoothList.h; sourceTree = "<group>"; };
+		4A4D91B92509D6FE004B9FA0 /* TestBluetoothList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestBluetoothList.m; sourceTree = "<group>"; };
+		4A4D91BA2509D6FF004B9FA0 /* TestCustomTrackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCustomTrackVC.m; sourceTree = "<group>"; };
+		4A4D91BF250A0981004B9FA0 /* FrintHookTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrintHookTest.swift; sourceTree = "<group>"; };
 		4A4F0DAE2477A971000A2A76 /* RootVController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootVController.m; sourceTree = "<group>"; };
 		4A4F0DAF2477A972000A2A76 /* RootVController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootVController.h; sourceTree = "<group>"; };
 		4A4F0DB22477AF98000A2A76 /* FTSDKiOSDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FTSDKiOSDemo.entitlements; sourceTree = "<group>"; };
+		4A7F62F724978C17000893C1 /* FTSDKiOSDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FTSDKiOSDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		4A85301023A35D4C00B40B5D /* FTSDKiOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTSDKiOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A85301323A35D4C00B40B5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4A85301423A35D4C00B40B5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,9 +57,7 @@
 		4A85302223A35D4F00B40B5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A85302423A35D4F00B40B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A85302523A35D4F00B40B5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4AAF2B562411058F00552B6D /* TestFlowTrackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFlowTrackVC.m; sourceTree = "<group>"; };
 		4AAF2B582411059000552B6D /* UITestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITestVC.h; sourceTree = "<group>"; };
-		4AAF2B5A2411059100552B6D /* TestFlowTrackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlowTrackVC.h; sourceTree = "<group>"; };
 		4AAF2B5B2411059100552B6D /* UITestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITestVC.m; sourceTree = "<group>"; };
 		4AAF2B5E2411059200552B6D /* RootTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabbarVC.h; sourceTree = "<group>"; };
 		4AAF2B5F2411059200552B6D /* RootTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabbarVC.m; sourceTree = "<group>"; };
@@ -118,24 +109,18 @@
 				4A85301723A35D4C00B40B5D /* SceneDelegate.m */,
 				4AAF2B622411059300552B6D /* DemoViewController.h */,
 				4AAF2B612411059300552B6D /* DemoViewController.m */,
+				4A4D91B82509D6FE004B9FA0 /* TestBluetoothList.h */,
+				4A4D91B92509D6FE004B9FA0 /* TestBluetoothList.m */,
+				4A4D91B72509D6FE004B9FA0 /* TestCustomTrackVC.h */,
+				4A4D91BA2509D6FF004B9FA0 /* TestCustomTrackVC.m */,
 				4AAF2B5E2411059200552B6D /* RootTabbarVC.h */,
 				4AAF2B5F2411059200552B6D /* RootTabbarVC.m */,
 				4A4F0DAF2477A972000A2A76 /* RootVController.h */,
 				4A4F0DAE2477A971000A2A76 /* RootVController.m */,
-				4AAF2B5A2411059100552B6D /* TestFlowTrackVC.h */,
-				4AAF2B562411058F00552B6D /* TestFlowTrackVC.m */,
-				4A4F0DA42477A862000A2A76 /* SubFlowTrack1.h */,
-				4A4F0D9C2477A860000A2A76 /* SubFlowTrack1.m */,
-				4A4F0D9D2477A860000A2A76 /* SubFlowTrack2.h */,
-				4A4F0DA02477A861000A2A76 /* SubFlowTrack2.m */,
-				4A4F0DA22477A861000A2A76 /* SubFlowTrack3.h */,
-				4A4F0D992477A860000A2A76 /* SubFlowTrack3.m */,
-				4A4F0D9B2477A860000A2A76 /* SubFlowTrackCell.h */,
-				4A4F0DA12477A861000A2A76 /* SubFlowTrackCell.m */,
-				4A4F0DA32477A862000A2A76 /* TestSubFlowTrack.h */,
-				4A4F0D9E2477A861000A2A76 /* TestSubFlowTrack.m */,
-				4A4F0D9F2477A861000A2A76 /* TestSubFlowTrack2.h */,
-				4A4F0D9A2477A860000A2A76 /* TestSubFlowTrack2.m */,
+				4A37A95E2488974E00E0381B /* TestWKWebViewVC.h */,
+				4A37A95D2488974E00E0381B /* TestWKWebViewVC.m */,
+				4A4D91BF250A0981004B9FA0 /* FrintHookTest.swift */,
+				4A7F62F724978C17000893C1 /* FTSDKiOSDemo-Bridging-Header.h */,
 				4AAF2B582411059000552B6D /* UITestVC.h */,
 				4AAF2B5B2411059100552B6D /* UITestVC.m */,
 				4A85301923A35D4C00B40B5D /* ViewController.h */,
@@ -202,6 +187,7 @@
 				TargetAttributes = {
 					4A85300F23A35D4C00B40B5D = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -283,21 +269,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A4F0DA82477A862000A2A76 /* TestSubFlowTrack.m in Sources */,
-				4A4F0DA72477A862000A2A76 /* SubFlowTrack1.m in Sources */,
+				4A4D91BB2509D6FF004B9FA0 /* TestBluetoothList.m in Sources */,
+				4A37A95F2488974E00E0381B /* TestWKWebViewVC.m in Sources */,
 				4AAF2B672411059300552B6D /* RootTabbarVC.m in Sources */,
-				4A4F0DA62477A862000A2A76 /* TestSubFlowTrack2.m in Sources */,
-				4A4F0DAA2477A862000A2A76 /* SubFlowTrackCell.m in Sources */,
+				4A4D91BC2509D6FF004B9FA0 /* TestCustomTrackVC.m in Sources */,
 				4A85301B23A35D4C00B40B5D /* ViewController.m in Sources */,
 				4AAF2B692411059300552B6D /* DemoViewController.m in Sources */,
 				4A85301523A35D4C00B40B5D /* AppDelegate.m in Sources */,
-				4AAF2B642411059300552B6D /* TestFlowTrackVC.m in Sources */,
 				4A4F0DB02477A972000A2A76 /* RootVController.m in Sources */,
-				4A4F0DA92477A862000A2A76 /* SubFlowTrack2.m in Sources */,
 				4AAF2B652411059300552B6D /* UITestVC.m in Sources */,
 				4A85302623A35D4F00B40B5D /* main.m in Sources */,
+				4A4D91C0250A0981004B9FA0 /* FrintHookTest.swift in Sources */,
 				4A85301823A35D4C00B40B5D /* SceneDelegate.m in Sources */,
-				4A4F0DA52477A862000A2A76 /* SubFlowTrack3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,8 +423,10 @@
 			baseConfigurationReference = DF5A44C3FDEE8AB07F72B2AC /* Pods-FTSDKiOSDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = FTSDKiOSDemo/FTSDKiOSDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = FDRMD28QMM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -459,6 +444,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = HLL.FTSDKiOSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FTSDKiOSDemo/FTSDKiOSDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -468,8 +456,10 @@
 			baseConfigurationReference = 320A54C3EF4A029D155CDF06 /* Pods-FTSDKiOSDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = FTSDKiOSDemo/FTSDKiOSDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = FDRMD28QMM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -487,6 +477,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = HLL.FTSDKiOSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FTSDKiOSDemo/FTSDKiOSDemo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

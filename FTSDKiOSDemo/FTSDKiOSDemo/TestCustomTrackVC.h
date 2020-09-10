@@ -1,8 +1,8 @@
 //
-//  SubFlowTrack2.h
+//  TestCustomTrackVC.h
 //  ft-sdk-iosTest
 //
-//  Created by 胡蕾蕾 on 2020/3/9.
+//  Created by 胡蕾蕾 on 2020/6/9.
 //  Copyright © 2020 hll. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SubFlowTrack2 : RootVController
+@interface TestCustomTrackVC : RootVController
 
 @end
 

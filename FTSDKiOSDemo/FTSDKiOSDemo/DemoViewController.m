@@ -8,12 +8,11 @@
 
 #import "DemoViewController.h"
 #import "UITestVC.h"
-#import "TestSubFlowTrack.h"
-#import "TestSubFlowTrack2.h"
+#import "TestCustomTrackVC.h"
+#import "TestBluetoothList.h"
 #import <FTMobileAgent.h>
 #import "AppDelegate.h"
-#import "TestFlowTrackVC.h"
-
+#import "FTSDKiOSDemo-Swift.h"
 @interface DemoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *mtableView;
 @property (nonatomic, strong) NSArray *dataSource;
@@ -25,7 +24,7 @@
     [super viewDidLoad];
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:@"确认" style:UIBarButtonItemStylePlain target:self action:@selector(onClickedOKbtn)];
     self.navigationItem.rightBarButtonItem = rightBarItem;
-    self.dataSource = @[@"BindUser",@"LogOut",@"Test_trackBackgroud",@"Test_trackImmediate",@"Test_trackImmediateList",@"Test_flowTrack",@"Test_autoTrack",@"Test_subFlowTrack",@"Test_subFlowTrack2",@"Test_resetConfig",@"Test_startLocation",@"Test_startMonitorFlush",@"Test_stopMonitorFlush",@"Test_addPageDesc",@"Test_addVtpDesc"];
+    self.dataSource = @[@"Test_BindUser",@"Test_UserLogOut",@"Test_CustomTrack",@"Test_autoTrack",@"Test_resetConfig",@"Test_startLocation",@"Test_startMonitorFlush",@"Test_stopMonitorFlush",@"Test_getConnectBluetooth",@"Test_crashLog",@"Test_log",@"Test_NetworkTrace"];
     [self createUI];
 }
 - (void)onClickedOKbtn {
@@ -56,58 +55,14 @@
 - (void)testUserLogout{
     [[FTMobileAgent sharedInstance] logout];
 }
-- (void)testTrackBackgroud{
-    [[FTMobileAgent sharedInstance] trackBackground:@"track ,Test" tags:nil field:@{@"ev，ent":@"te s，t"}];
-}
-- (void)testTrackImmediate{
-    [[FTMobileAgent sharedInstance] trackImmediate:@"testImmediateList" field:@{@"test":@"testImmediate"} callBack:^(NSInteger statusCode, id  _Nonnull responseObject) {
-        NSLog(@"statusCode = %ld",(long)statusCode);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self showResult:statusCode==200?@"success":@"fail"];
-        });
-    }];
-}
-- (void)testTrackImmediateList{
-    //bean1 用户自己传时间  bean2 自动赋值
-    FTTrackBean *bean1 = [FTTrackBean new];
-    bean1.measurement = @"testImmediateList";
-    bean1.field =@{@"test":@"testImmediateList"};
-    NSDate *datenow = [NSDate date];
-    long time= (long)([datenow timeIntervalSince1970]*1000);
-    bean1.timeMillis =time;
-    FTTrackBean *bean2 = [FTTrackBean new];
-    bean2.measurement = @"testImmediateList2";
-    bean2.field =@{@"test":@"testImmediateList2"};
-    
-    [[FTMobileAgent sharedInstance] trackImmediateList:@[bean1,bean2] callBack:^(NSInteger statusCode, id  _Nonnull responseObject) {
-        NSLog(@"responseObject = %@",responseObject);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self showResult:statusCode==200?@"success":@"fail"];
-        });
-    }];
-    
-}
-- (void)testFlowTrack{
+- (void)testCustomTrack{
     self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:[TestFlowTrackVC new] animated:YES];
+    [self.navigationController pushViewController:[TestCustomTrackVC new] animated:YES];
     self.hidesBottomBarWhenPushed = NO;
-    
 }
 - (void)testAutoTrack{
-    
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:[UITestVC new] animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
-}
-- (void)testSubFlowTrack{
-    self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:[TestSubFlowTrack new] animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
-    
-}
-- (void)testSubFlowTrack2{
-    self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:[TestSubFlowTrack2 new] animated:YES];
     self.hidesBottomBarWhenPushed = NO;
 }
 -(void)showResult:(NSString *)title{
@@ -134,40 +89,40 @@
 - (void)testStopMonitorFlush{
     [[FTMobileAgent sharedInstance] stopMonitorFlush];
 }
-- (void)testAddPageDesc{
-    NSDictionary *dict = @{@"DemoViewController":@"首页",
-                                  @"RootTabbarVC":@"底部导航",
-                                  @"UITestVC":@"UI测试",
-                                  @"ResultVC":@"测试结果",
-           };
-    [[FTMobileAgent sharedInstance] addPageDescDict:dict];
-    [[FTMobileAgent sharedInstance] isFlowChartDescEnabled:YES];
-    [[FTMobileAgent sharedInstance] isPageVtpDescEnabled:YES];
+- (void)testGetConnectBluetooth{
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:[TestBluetoothList new] animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
-- (void)testAddVtpDesc{
-    NSDictionary *vtpdict = @{@"UITabBarController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITabBar/UITabBarButton[2]":@"second点击",
-                              @"UITabBarController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITabBar/UITabBarButton[1]":@"home点击",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationBar/_UINavigationBarContentView/_UIButtonBarStackView/_UIButtonBarButton[0]":@"导航确认点击",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[0]":@"测试绑定用户",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[1]":@"测试登出用户",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[2]":@"测试主动埋点",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[3]":@"测试主动埋点立即上传",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[4]":@"测试主动埋点立即上传多条",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[5]":@"测试流程图",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[6]":@"测试全埋点",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[7]":@"测试子页面流程图1",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[8]":@"测试子页面流程图2",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[9]":@"测试重置config",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[10]":@"测试获取地理位置信息",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[11]":@"测试监控项周期上传开启",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[12]":@"测试监控项周期上传关闭",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[13]":@"测试添加页面描述",
-                              @"DemoViewController/UIWindow/UITransitionView/UIDropShadowView/UILayoutContainerView/UITransitionView/UIViewControllerWrapperView/UILayoutContainerView/UINavigationTransitionView/UIViewControllerWrapperView/UIView/UITableView[0]/section[0]/row[14]":@"测试添加视图树描述",
+- (void)testCrashLog{
+    NSString *str = nil;
+    NSDictionary *dict = @{@"name":str};
+}
+- (void)testLog{
+    NSLog(@"testLog");
+    FrintHookTest *test = [[FrintHookTest alloc]init];
+    [test show];
 
-    };
-    [[FTMobileAgent sharedInstance] addVtpDescDict:vtpdict];
-    [[FTMobileAgent sharedInstance] isPageVtpDescEnabled:YES];
+}
+- (void)testNetworkTrace{
+    NSArray *search = @[@"上海天气",@"鹅鹅鹅",@"温度",@"机器人"];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    int x = arc4random() % 4;
+    NSString *parameters = [NSString stringWithFormat:@"key=free&appid=0&msg=%@",search[x]];
+    NSString *urlStr = @"http://api.qingyunke.com/api.php";
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
     
+    request.HTTPMethod = @"POST";
+    
+    request.HTTPBody = [parameters dataUsingEncoding:NSUTF8StringEncoding];
+    NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSHTTPURLResponse *res =(NSHTTPURLResponse *)response;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showResult:[NSString stringWithFormat:@"statusCode == %ld",(long)res.statusCode]];
+        });
+    }];
+    [task resume];
 }
 #pragma mark ========== UITableViewDataSource ==========
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -189,43 +144,34 @@
             [self testUserLogout];
             break;
         case 2:
-            [self testTrackBackgroud];
+            [self testCustomTrack];
             break;
         case 3:
-            [self testTrackImmediate];
-            break;
-        case 4:
-            [self testTrackImmediateList];
-            break;
-        case 5:
-            [self testFlowTrack];
-            break;
-        case 6:
             [self testAutoTrack];
             break;
-        case 7:
-            [self testSubFlowTrack];
-            break;
-        case 8:
-            [self testSubFlowTrack2];
-            break;
-        case 9:
+        case 4:
             [self testResetConfig];
             break;
-        case 10:
+        case 5:
             [self testStartLocation];
             break;
-        case 11:
+        case 6:
             [self testStartMonitorFlush];
             break;
-        case 12:
+        case 7:
             [self testStopMonitorFlush];
             break;
-        case 13:
-            [self testAddPageDesc];
+        case 8:
+            [self testGetConnectBluetooth];
             break;
-        case 14:
-            [self testAddVtpDesc];
+        case 9:
+            [self testCrashLog];
+            break;
+        case 10:
+            [self testLog];
+            break;
+        case 11:
+            [self testNetworkTrace];
             break;
         default:
             break;
