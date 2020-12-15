@@ -4,17 +4,6 @@
 target 'FTSDKiOSDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'FTMobileSDK', '~>1.0.2-alpha.22'
-  post_install do |installer_representation|
-         installer_representation.pods_project.targets.each do |target|
-             if target.name == 'FTMobileSDK'
-                 target.build_configurations.each do |config|
-                         config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)','FT_TRACK_GPUUSAGE=1']
-                         puts "===================>target build configure #{config.build_settings}"
-                 end
-             end
-         end
-     end
-
+  pod 'FTMobileSDK', '~>1.0.4-alpha.4'
   # Pods for FTSDKiOSDemo
 end
