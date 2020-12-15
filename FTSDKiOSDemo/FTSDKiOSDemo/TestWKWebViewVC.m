@@ -14,14 +14,9 @@
 @end
 
 @implementation TestWKWebViewVC
-- (void)viewWillAppear:(BOOL)animated {
-    
-    [super viewWillAppear:animated];
-    
-    [_webView.configuration.userContentController addScriptMessageHandler:self name:@"track1"];
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"TestWKWebViewVC";
     [self startTest];
 }
@@ -36,27 +31,12 @@
     //! 使用configuration对象初始化webView
     _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
     [self.view addSubview:_webView];
-    NSString *urlStr = @"http://10.200.7.48/test/js_test.html";
+    NSString *urlStr = @"https://github.com/CloudCare/dataflux-sdk-ios";
     NSURL *url = [NSURL URLWithString:urlStr];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     [_webView loadRequest:request];
-    [_webView loadRequest:request];
-    [_webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
-        
-        NSLog(@"userAgent == %@",result);
-    }];
-    
 }
-- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
 
-    
-}
-- (void)viewWillDisappear:(BOOL)animated {
-    
-    [super viewWillDisappear:animated];
-    
-    [_webView.configuration.userContentController removeScriptMessageHandlerForName:@"track1"];
-}
 -(void)dealloc{
     NSLog(@"dealloc");
 }

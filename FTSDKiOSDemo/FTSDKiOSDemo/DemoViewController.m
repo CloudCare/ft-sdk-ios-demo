@@ -7,12 +7,11 @@
 //
 
 #import "DemoViewController.h"
-#import "UITestVC.h"
-#import "TestCustomTrackVC.h"
-#import "TestBluetoothList.h"
+#import "EventFlowLogTestVC.h"
 #import <FTMobileAgent.h>
 #import "AppDelegate.h"
 #import "FTSDKiOSDemo-Swift.h"
+#import "TestWKWebViewVC.h"
 @interface DemoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *mtableView;
 @property (nonatomic, strong) NSArray *dataSource;
@@ -22,22 +21,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:@"确认" style:UIBarButtonItemStylePlain target:self action:@selector(onClickedOKbtn)];
     self.navigationItem.rightBarButtonItem = rightBarItem;
-    self.dataSource = @[@"Test_BindUser",@"Test_UserLogOut",@"Test_CustomTrack",@"Test_autoTrack",@"Test_resetConfig",@"Test_startLocation",@"Test_startMonitorFlush",@"Test_stopMonitorFlush",@"Test_getConnectBluetooth",@"Test_crashLog",@"Test_log",@"Test_NetworkTrace"];
+    self.dataSource = @[@"Test_BindUser",@"Test_UserLogOut",@"Test_CustomLogging",@"Test_EventFlowLog",@"Test_CrashLog",@"Test_ConsoleLogTrack",@"Test_NetworkTrace",@"Test_WKWebViewTrace"];
     [self createUI];
 }
 - (void)onClickedOKbtn {
     NSLog(@"onClickedOKbtn");
 }
 -(void)createUI{
-    
     _mtableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-200)];
     _mtableView.dataSource = self;
     _mtableView.delegate = self;
-    _mtableView.vtpAddIndexPath = YES;
     [self.view addSubview:_mtableView];
-    
     [_mtableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
 }
 - (void)testStartLocation{
@@ -47,22 +44,19 @@
             [self showResult:[NSString stringWithFormat:@"errorCode = %ld,errorMessage=%@",(long)errorCode,errorMessage]];
         }];
     });
-    
 }
 - (void)testBindUser{
-    [[FTMobileAgent sharedInstance] bindUserWithName:@"test8" Id:@"1111111" exts:@{@"platform": @"ios"}];
+    [[FTMobileAgent sharedInstance] bindUserWithUserID:@"testuser1"];
 }
 - (void)testUserLogout{
     [[FTMobileAgent sharedInstance] logout];
 }
-- (void)testCustomTrack{
-    self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:[TestCustomTrackVC new] animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
+- (void)testCustomLogging{
+    [[FTMobileAgent sharedInstance] logging:@"testLogging" status:FTStatusInfo];
 }
-- (void)testAutoTrack{
+- (void)testEventFlowLog{
     self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:[UITestVC new] animated:YES];
+    [self.navigationController pushViewController:[EventFlowLogTestVC new] animated:YES];
     self.hidesBottomBarWhenPushed = NO;
 }
 -(void)showResult:(NSString *)title{
@@ -71,38 +65,14 @@
     [alert addAction:commit];
     [self presentViewController:alert animated:YES completion:nil];
 }
-- (void)testResetConfig{
-    NSProcessInfo *processInfo = [NSProcessInfo processInfo];
-    NSString *akId =[processInfo environment][@"ACCESS_KEY_ID"];
-    NSString *akSecret = [processInfo environment][@"ACCESS_KEY_SECRET"];
-    NSString *url = [processInfo environment][@"ACCESS_SERVER_URL"];
-    // 新的config 关闭了autoTrack  将无全埋点日志
-    FTMobileConfig *config = [[FTMobileConfig alloc]initWithMetricsUrl:url akId:akId akSecret:akSecret enableRequestSigning:YES];
-    config.enableLog = YES;
-    config.enableAutoTrack = NO;
-    [config enableTrackScreenFlow:NO];
-    [FTMobileAgent startWithConfigOptions:config];
-}
-- (void)testStartMonitorFlush{
-    [[FTMobileAgent sharedInstance] startMonitorFlushWithInterval:10 monitorType:FTMonitorInfoTypeAll];
-}
-- (void)testStopMonitorFlush{
-    [[FTMobileAgent sharedInstance] stopMonitorFlush];
-}
-- (void)testGetConnectBluetooth{
-    self.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:[TestBluetoothList new] animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
-}
 - (void)testCrashLog{
     NSString *str = nil;
     NSDictionary *dict = @{@"name":str};
 }
-- (void)testLog{
+- (void)testLogTrack{
     NSLog(@"testLog");
     FrintHookTest *test = [[FrintHookTest alloc]init];
     [test show];
-
 }
 - (void)testNetworkTrace{
     NSArray *search = @[@"上海天气",@"鹅鹅鹅",@"温度",@"机器人"];
@@ -124,6 +94,11 @@
     }];
     [task resume];
 }
+- (void)testWKWebviewTrace{
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:[TestWKWebViewVC new] animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+}
 #pragma mark ========== UITableViewDataSource ==========
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataSource.count;
@@ -144,34 +119,22 @@
             [self testUserLogout];
             break;
         case 2:
-            [self testCustomTrack];
+            [self testCustomLogging];
             break;
         case 3:
-            [self testAutoTrack];
+            [self testEventFlowLog];
             break;
         case 4:
-            [self testResetConfig];
-            break;
-        case 5:
-            [self testStartLocation];
-            break;
-        case 6:
-            [self testStartMonitorFlush];
-            break;
-        case 7:
-            [self testStopMonitorFlush];
-            break;
-        case 8:
-            [self testGetConnectBluetooth];
-            break;
-        case 9:
             [self testCrashLog];
             break;
-        case 10:
-            [self testLog];
+        case 5:
+            [self testLogTrack];
             break;
-        case 11:
+        case 6:
             [self testNetworkTrace];
+            break;
+        case 7:
+            [self testWKWebviewTrace];
             break;
         default:
             break;

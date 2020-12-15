@@ -1,6 +1,5 @@
 #import "SceneDelegate.h"
 #import "DemoViewController.h"
-#import "RootTabbarVC.h"
 @interface SceneDelegate ()
 
 @end
@@ -13,16 +12,17 @@
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     UITabBarController *tab = [[UITabBarController alloc]init];
-       DemoViewController *rootVC = [[DemoViewController alloc] init];
-       rootVC.title = @"home";
-      
-       UINavigationController *rootNav = [[UINavigationController alloc] initWithRootViewController:rootVC];
-       RootTabbarVC *second =  [RootTabbarVC new];
-       second.title = @"second";
-       tab.viewControllers = @[rootNav,second];
-      
-       self.window.rootViewController = tab;
-       [self.window makeKeyAndVisible];
+    DemoViewController *rootVC = [[DemoViewController alloc] init];
+    rootVC.title = @"home";
+    
+    UINavigationController *rootNav = [[UINavigationController alloc] initWithRootViewController:rootVC];
+    UIViewController *second =  [UIViewController new];
+    second.view.backgroundColor = [UIColor whiteColor];
+    second.title = @"second";
+    tab.viewControllers = @[rootNav,second];
+    
+    self.window.rootViewController = tab;
+    [self.window makeKeyAndVisible];
 }
 
 

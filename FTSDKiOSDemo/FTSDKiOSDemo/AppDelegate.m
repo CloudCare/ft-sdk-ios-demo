@@ -19,19 +19,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     NSProcessInfo *processInfo = [NSProcessInfo processInfo];
-    NSString *akId =[processInfo environment][@"ACCESS_KEY_ID"];
-    NSString *akSecret = [processInfo environment][@"ACCESS_KEY_SECRET"];
     NSString *url = [processInfo environment][@"ACCESS_SERVER_URL"];
-     if (akId && akSecret && url) {
-    FTMobileConfig *config = [[FTMobileConfig alloc]initWithMetricsUrl:url akId:akId akSecret:akSecret enableRequestSigning:YES];
-    config.enableLog = YES;
-    [config setEnableDescLog:YES];
-    config.enableAutoTrack = YES;
-    config.needBindUser = YES;
-    config.autoTrackEventType = FTAutoTrackEventTypeAppClick|FTAutoTrackEventTypeAppLaunch|FTAutoTrackEventTypeAppViewScreen;
-    [config enableTrackScreenFlow:YES];
-    
-    [FTMobileAgent startWithConfigOptions:config];
+    NSString *appid = [processInfo environment][@"APP_ID"];
+    if (url) {
+        FTMobileConfig *config = [[FTMobileConfig alloc]initWithMetricsUrl:url];
+        config.appid = appid;
+        config.enableSDKDebugLog = YES;
+        config.eventFlowLog = YES;
+        config.networkTrace = YES;
+        config.enableTrackAppCrash = YES;
+        config.enableTrackAppANR = YES;
+        config.enableTrackAppUIBlock = YES;
+        [FTMobileAgent startWithConfigOptions:config];
     }
     return YES;
 }

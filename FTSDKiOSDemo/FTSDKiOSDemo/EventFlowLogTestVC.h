@@ -1,5 +1,5 @@
 //
-//  UITestVC.h
+//  EventFlowLogTestVC.h
 //  FTSDKiOSDemo
 //
 //  Created by 胡蕾蕾 on 2019/12/20.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UITestVC : UIViewController
+@interface EventFlowLogTestVC : UIViewController
 @property (nonatomic, strong) UIButton *firstButton;
 @property (nonatomic, strong) UIButton *secondButton;
 @property (nonatomic, strong) UIStepper *stepper;

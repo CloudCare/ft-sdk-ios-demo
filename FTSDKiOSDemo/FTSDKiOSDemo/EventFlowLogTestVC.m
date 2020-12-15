@@ -1,18 +1,18 @@
 //
-//  UITestVC.m
+//  EventFlowLogTestVC.m
 //  FTSDKiOSDemo
 //
 //  Created by 胡蕾蕾 on 2019/12/20.
 //  Copyright © 2019 hll. All rights reserved.
 //
 
-#import "UITestVC.h"
+#import "EventFlowLogTestVC.h"
 #import "AppDelegate.h"
-@interface UITestVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface EventFlowLogTestVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
-@implementation UITestVC
+@implementation EventFlowLogTestVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
