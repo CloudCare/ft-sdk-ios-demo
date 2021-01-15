@@ -1,18 +1,18 @@
 PODS:
-  - FTMobileSDK (1.0.4-alpha.4):
-    - FTMobileSDK/FTMobileAgent (= 1.0.4-alpha.4)
-  - FTMobileSDK/FTMobileAgent (1.0.4-alpha.4)
+  - FTMobileSDK (1.0.4-alpha.10):
+    - FTMobileSDK/FTMobileAgent (= 1.0.4-alpha.10)
+  - FTMobileSDK/FTMobileAgent (1.0.4-alpha.10)
 
 DEPENDENCIES:
-  - FTMobileSDK (~> 1.0.4-alpha.4)
+  - FTMobileSDK (~> 1.0.4-alpha.10)
 
 SPEC REPOS:
   trunk:
     - FTMobileSDK
 
 SPEC CHECKSUMS:
-  FTMobileSDK: 14ad25c1a6e9bbd4ca5394a0ce8b84cd6d42621d
+  FTMobileSDK: 1ccecffd8034a44abfb78131f9a8871ebd19b228
 
-PODFILE CHECKSUM: 90f04e7f1bdb3aa9d10dfd2b563b4bf28f5e09e3
+PODFILE CHECKSUM: 27f0fbc804fbd2c5e35a05a9eee1b9076addc1e1
 
 COCOAPODS: 1.9.2
